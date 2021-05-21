@@ -1,0 +1,12 @@
+from appium import webdriver
+
+
+def before_all(context):
+    caps = {
+        "platformName": "Android",
+        "appPackage": "com.tumblr",
+        "appActivity": "com.tumblr.onboarding.PreOnboardingActivity",
+        "app": "/Users/felipebarbosa/PycharmProjects/helloWorld/tumblr.apk"
+        }
+
+    context.driver = webdriver.Remote("http://localhost:4723/wd/hub", caps)
